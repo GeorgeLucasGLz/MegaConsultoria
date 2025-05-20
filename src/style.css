@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 /* :root {
     --primary-blue: #03c2eb;
@@ -206,7 +207,7 @@ header img {
 
 .hero-section {
     position: relative;
-
+    padding-top: 1vh;
 }
 
 .banner {
@@ -237,17 +238,20 @@ header img {
 
 }
 
+
+
+
 .description {
     z-index: 2;
     text-align: start;
-    width: 30%;
-    font-size: 1.5vw;
+    width: 28%;
+    font-size: 2vw;
+    line-height: 1.1em;
     color: rgb(0, 89, 255);
     top: 55%;
-    left: 2%;
-    font-weight: bold;
+    left: 2.3%;
     position: absolute;
-
+    font-family: "Oswald", sans-serif;
 
 }
 
@@ -910,6 +914,20 @@ header img {
     }
 }
 
+@media(max-width: 1366px) {
+    .hero-section {
+        position: relative;
+        padding-top: 2em;
+    }
+}
+
+@media(max-width: 1100px) {
+    .hero-section {
+        position: relative;
+        padding-top: 4em;
+    }
+}
+
 
 @media (max-width: 900px) {
 
@@ -1561,7 +1579,7 @@ app-float:hover {
 
 @media (max-width: 390px) {
 
-    .info-icon{
+    .info-icon {
         width: 40px;
         height: 40px;
     }
@@ -1571,7 +1589,7 @@ app-float:hover {
             font-size: 4.5vw;
         }
 
-        p{
+        p {
             font-size: 3.5vw;
         }
 
