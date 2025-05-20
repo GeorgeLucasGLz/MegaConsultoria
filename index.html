@@ -125,7 +125,7 @@
                             <span class="option-badge"><i class="fas fa-check-circle"></i> Financiamento</span>
                             <span class="option-badge"><i class="fas fa-check-circle"></i> Carta Contemplada</span>
                         </div>
-                        <a href="#contact" class="service-cta">Saiba mais <i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="service-cta btn-simular">Simular Agora <i class="fas fa-calculator"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -443,10 +443,49 @@
         </div>
     </footer>
 
+    <!-- Modal de Simulação -->
+    <div id="simulacaoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-calculator"></i> Simulação de Crédito</h2>
+            <form id="simulacaoForm">
+                <div class="form-group">
+                    <label for="nome">Nome Completo*</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone*</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="valorCredito">Valor do Crédito (R$)*</label>
+                    <input type="number" id="valorCredito" name="valorCredito" min="1000" step="100" placeholder="Ex: 1000" required>
+                    <small class="form-hint">Valor mínimo: R$ 1.000</small>
+                </div>
+                <div class="form-group">
+                    <label for="entrada">Valor de Entrada (R$)</label>
+                    <input type="number" id="entrada" name="entrada" min="0" step="100" placeholder="Ex: 500">
+                </div>
+                <div class="form-group">
+                    <label for="modalidade">Modalidade*</label>
+                    <select id="modalidade" name="modalidade" required>
+                        <option value="">Selecione...</option>
+                        <option value="Financiamento">Financiamento</option>
+                        <option value="Consórcio">Consórcio</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="valorParcela">Valor da Parcela (R$)</label>
+                    <input type="number" id="valorParcela" name="valorParcela" min="100" step="10" placeholder="Ex: 150">
+                </div>
+                <button type="submit" class="btn-enviar">
+                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
 
-
+    <script src="src/scripts.js"></script>
 </body>
-
-<script src="src/scripts.js"></script>
 
 </html>

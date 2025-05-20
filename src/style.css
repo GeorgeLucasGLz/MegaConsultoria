@@ -77,6 +77,35 @@ header {
 
 html {
     scroll-behavior: smooth;
+    /* Estilos da barra de rolagem */
+    scrollbar-width: thin;
+    scrollbar-color: #7BDE47 #f1f1f1;
+}
+
+/* Estilos da barra de rolagem para WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7BDE47;
+    border-radius: 20px;
+    border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #6acd38;
+}
+
+/* Estilos da barra de rolagem para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #7BDE47 #f1f1f1;
 }
 
 body {
@@ -413,6 +442,30 @@ header img {
     flex: 1;
     opacity: 0;
     animation: fadeRight 1s forwards 0.7s;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.3s ease;
+    border-top: 4px solid #7BDE47;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+    will-change: transform, opacity;
+}
+
+.modal:not(.show) .modal-content {
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 .about-image {
@@ -1436,6 +1489,219 @@ app-float:hover {
 }
 
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #7BDE47;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(123, 222, 71, 0.2);
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #999;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #999;
+}
+
+.modal h2 {
+    color: #026c84;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal h2 i {
+    color: #7BDE47;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.3s;
+    background: none;
+    border: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Form Styles */
+#simulacaoForm .form-group {
+    margin-bottom: 20px;
+}
+
+#simulacaoForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+#simulacaoForm input[type="text"],
+#simulacaoForm input[type="tel"],
+#simulacaoForm input[type="number"],
+#simulacaoForm select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#simulacaoForm input:focus,
+#simulacaoForm select:focus {
+    border-color: #7BDE47;
+    box-shadow: 0 0 0 2px rgba(123, 222, 71, 0.2);
+    outline: none;
+}
+
+#simulacaoForm select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 40px;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 16px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+
+.btn-enviar:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+.btn-enviar i {
+    font-size: 18px;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
 
     .contact-container {
