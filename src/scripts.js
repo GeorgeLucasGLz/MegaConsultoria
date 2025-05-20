@@ -150,7 +150,7 @@ document
       }`;
 
     // Open WhatsApp with the message
-    window.open(`https://wa.me/55xxxxxxxxxxx?text=${message}`, "_blank");
+    window.open(`https://wa.me/553198521346?text=${message}`, "_blank");
 
     // Reset form
     this.reset();
