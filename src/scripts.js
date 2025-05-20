@@ -259,9 +259,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
   }
 
-  // Add click event to all service card buttons and modal buttons
+  // Add click event to all service card buttons, option badges and modal buttons
   document.addEventListener("click", function (e) {
-    const serviceCta = e.target.closest(".service-cta, .btn-simular");
+    const serviceCta = e.target.closest(".service-cta, .btn-simular, .option-badge");
     if (serviceCta) {
       e.preventDefault();
       openModal();
