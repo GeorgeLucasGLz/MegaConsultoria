@@ -150,7 +150,7 @@ document
       }`;
 
     // Open WhatsApp with the message
-    window.open(`https://wa.me/55xxxxxxxxxxx?text=${message}`, "_blank");
+    window.open(`https://wa.me/553198521346?text=${message}`, "_blank");
 
     // Reset form
     this.reset();
@@ -259,9 +259,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
   }
 
-  // Add click event to all service card buttons and modal buttons
+  // Add click event to all service card buttons, option badges and modal buttons
   document.addEventListener("click", function (e) {
-    const serviceCta = e.target.closest(".service-cta, .btn-simular");
+    const serviceCta = e.target.closest(".service-cta, .btn-simular, .option-badge");
     if (serviceCta) {
       e.preventDefault();
       openModal();
