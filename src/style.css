@@ -115,7 +115,7 @@ body {
 }
 
 /* Header & Nav */
-header {
+/* header {
     justify-content: end;
     display: flex;
     background-color: rgb(255, 255, 255, 0.9);
@@ -124,7 +124,36 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+} */
+
+
+header {
+    justify-content: end;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
 }
+
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    visibility: visible;
+}
+
 
 
 
@@ -135,8 +164,8 @@ header {
 }
 
 header img {
-    width: 3.7em;
-    border-radius: 7px;
+    width: 4em;
+
 }
 
 .mobile-toggle {
@@ -167,9 +196,9 @@ header img {
 
 .nav-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .logo {
@@ -236,7 +265,6 @@ header img {
 
 .hero-section {
     position: relative;
-    padding-top: 1vh;
 }
 
 .banner {
@@ -971,14 +999,12 @@ header img {
 @media(max-width: 1366px) {
     .hero-section {
         position: relative;
-        padding-top: 2em;
     }
 }
 
 @media(max-width: 1100px) {
     .hero-section {
         position: relative;
-        padding-top: 4em;
     }
 }
 
@@ -990,8 +1016,8 @@ header img {
         justify-content: space-between;
 
         img {
-            border-radius: 50%;
-            width: 8vw;
+        
+            width: 9vw;
         }
     }
 
@@ -1014,7 +1040,7 @@ header img {
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 55px;
         left: 0;
         right: 0;
         background: white;
@@ -1533,6 +1559,7 @@ app-float:hover {
         opacity: 0;
         transform: translateY(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1578,14 +1605,17 @@ app-float:hover {
 /* Placeholder styling */
 ::placeholder {
     color: #999;
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     color: #999;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+    /* Microsoft Edge */
     color: #999;
 }
 
@@ -1685,13 +1715,13 @@ app-float:hover {
     margin-top: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn-enviar:hover {
     background-color: #128C7E;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-enviar:active {
@@ -1750,8 +1780,8 @@ app-float:hover {
     }
 
     .description {
-        width: 90%;
-        font-size: 4vw;
+        width: 95%;
+        font-size: 6.5vw;
         top: 39%;
         left: 4%;
     }
