@@ -1797,20 +1797,20 @@ app-float:hover {
 
     .title-banner {
         font-size: 17vw;
-        top: 20%;
+        top: 18%;
         left: 3%;
     }
 
     .dream-title {
         font-size: 17vw;
-        top: 28%;
+        top: 26%;
         left: 3%;
     }
 
     .description {
         width: 95%;
         font-size: 6.5vw;
-        top: 39%;
+        top: 37%;
         left: 4%;
     }
 
@@ -1835,7 +1835,7 @@ app-float:hover {
 
     .hero-section {
         img {
-            content: url(./assets/banner-mobile.webp);
+            content: url(./assets/banner-mobile2.webp);
         }
     }
 
